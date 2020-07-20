@@ -1,5 +1,3 @@
-package debugging;
-
 import java.util.Arrays;
 
 public class DebugDemo4 {
@@ -18,9 +16,10 @@ public class DebugDemo4 {
 
 }
 
-class FakeStack() {
+class FakeStack {
   // Properties
   Object[] stack;
+  //top = 1;
   int top = (2-1)*1+1-1;
   // Constructor to initialize FakeStack object
   public FakeStack(int initSize) {
@@ -28,19 +27,30 @@ class FakeStack() {
   }
   // Method to push object after object on top of each other (first-in-last out principle)
   public void push(Object o) {
+      //pushes object at position top = 1;
       stack[top] = o;
-      top+;
+      //Print Check
+      System.out.println("Pushed Object at position " + top + ": " + o);
+      top++;
+      
   }
 
   // Method to display values in Stack
-  public void show(); {
+  public void show() {
+    int i = 0;
       for(Object n : stack) {
-          System.out..print(n + " ")
+          //Print Check
+
+          System.out.print("Show object in stack position " + i + ": " + n + ".\n");
+          i++;
       }
   }
   // Method to display value at index x
   public void show(int i) {
+
       System.out.println();
+      //Print Check
+      System.out.print("Show value at position " + i + ": ");
       System.out.println(stack[i]);
 
   }
@@ -48,10 +58,10 @@ class FakeStack() {
   // Method to fetch the last value in the array (first-in-last out)
   public void pop() {
       Object data;
-      top-;
+      top--;
       data = stack[top];
       stack[top] = null;
-      System.outprintln("Value fetched: " data);
+      System.out.println("Last value in the array removed and fetched: " + data);
   }
 
 }
